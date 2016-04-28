@@ -1,0 +1,303 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+$tabs-striped-border-width: 0;
+$item-padding: 10px;
+.rj-push-right {
+    position: absolute;
+    right: $item-padding;
+    top: $item-padding;
+    color: #8c8c8c;
+    font-size: 13px;
+}
+
+$item-avatar-border-radius: 0;
+.item {
+    .rj-list-p {
+        font-size: 13px;
+        color: #6a6a6a;
+    }
+}
+
+.item.my-popup {
+    padding: ($item-padding+5px);
+    padding-left: $item-padding * 2;
+}
+
+$item-default-border: #E8E8E8;
+$tabs-default-border: $item-default-border;
+.popup-head {
+    padding: 0 !important;
+    border-bottom: none !important;
+}
+
+.popup-body {
+    padding: 0px !important;
+    overflow: hidden !important;
+}
+
+$popup-width: 85%;
+.scroll-bar-indicator {
+    display: none;
+}
+
+.item > .rj-sm-red-icon {
+    position: absolute;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #FF0000;
+    line-height: 18px;
+    text-align: center;
+    top: 5px;
+    left: 40px;
+}
+
+.item > .rj-sm-red-icon > p {
+    color: #FFF;
+    font-size: 12px;
+}
+
+.rj-item-top {
+    background-color: #F1F1F1 !important;
+}
+
+.rj-stable-content {
+    background-color: #EEE;
+}
+
+.bar-footer {
+    border-top: 1px solid #EEE !important;
+}
+
+.bar-footer textarea {
+    resize: none;
+    height: 21px;
+    max-height: 100px;
+}
+
+.bar-footer .item-input {
+    border: none !important;
+    border-bottom: 1px solid #EEE !important;
+}
+
+
+.rj-footer-btn {
+    position: absolute !important;
+    bottom: -1px;
+    right: 5px;
+}
+
+.rj-footer-input{
+    width: 100%;
+}
+
+.rj-footer-btn-wrap {
+  position: relative; 
+  height: 100%; 
+  width: 50px; 
+  top: 2px;
+}
+
+.rj-footer-btn-left {
+  position: absolute !important; 
+  bottom: 0;
+
+}
+
+.rj-message-wrap{
+    padding: 7px;
+    overflow: auto;
+    position: relative;
+}
+
+.rj-message-wrap .rj-head-pic,
+.rj-message-wrap .rj-head-pic-right{
+    max-height: 40px;
+    max-width: 40px;
+}
+.rj-message-wrap .rj-head-pic{
+    float: left;
+}
+
+.rj-message-wrap .rj-head-pic-right{
+    float: right;
+}
+
+
+.rj-message-wrap .rj-message,
+.rj-message-wrap .rj-message-right{
+    padding: 6px 8px;
+    line-height: 26px;
+    max-width: 190px;
+    border-radius: 5px;
+
+}
+.rj-message-wrap .rj-message{
+    float: left;
+    margin-left: 16px;
+    background-color: #fff;
+
+}
+
+.rj-message-wrap .rj-message-right{
+    float: right;
+    margin-right: 16px;
+    background-color: #6BE00B;
+
+}
+.rj-message-wrap .rj-triangle-left,
+.rj-message-wrap .rj-triangle-right{
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-width:8px 10px;
+    border-style: solid;
+    top:17px;
+}
+
+.rj-message-wrap .rj-triangle-left{
+    left: 47px;
+    border-color: transparent #FFF transparent transparent;
+}
+
+.rj-message-wrap .rj-triangle-right{
+    right: 47px;
+    border-color: transparent transparent transparent #6BE00B;
+}
+
+.rj-message-time{
+    width: 42px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #FFF;
+    background-color: rgba(0,0,0,.2);
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rj-footer-btn-wrap .rj-send-button{
+    background-color: #1BBB37;
+    color: #FFF;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    bottom: 3px;
+    width: 38px;
+    left: 4px;
+}
+
+.rj-list .list{
+    width: 90%;
+    margin-left: 10px;
+    margin-right: auto;
+    margin-top: -1px;
+}
+
+.rj-list .list .rj-item{
+    border-left:none;
+    border-right:none;
+    border-bottom: none;
+    padding-left: 0;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.rj-contacts-item{
+    padding: 0px !important;
+}
+
+.rj-item .rj-contacts-pic{
+    color:white;
+    height:36px;
+    width:36px;
+    line-height: 36px;
+    float: left;
+    font-size: 28px;
+    text-align: center;
+}
+.rj-orange-bgc{
+    background-color:orange;
+}
+.rj-green-bgc{
+    background-color: #63db2a;
+}
+.rj-blue-bgc{
+    background-color: #2d31ca;
+}
+
+.rj-item h2{
+    padding-left: 10px;
+    position: absolute;
+    margin: auto !important;
+    top: 0;
+    bottom: 0;
+    left: 36px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.rj-contacts-pic img{
+    width: 36px;
+    height: 36px;
+}
+
+.rj-contacts-index-bar{
+    background-color: $item-default-border;
+    padding-left: 10px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 80%;
+    color: #545454;
+}
+
+.rj-contacts-right-bar{
+    position: fixed;
+    right: 0;
+    // top: 44px;
+    width: 20px;
+    height: 464px;
+    z-index: 2;
+    text-align: center;
+    font-size: 80%;
+    color: #545454;
+}
+.rj-contacts-right-bar div{
+    height: 16px;
+}
+.rj-contacts-middle-bar{
+    position: fixed;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #FFF;
+    font-size: 300%;
+    background-color: rgba(0, 0, 0, .5);
+    
+}
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";

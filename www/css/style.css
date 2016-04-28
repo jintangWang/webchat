@@ -1,0 +1,25 @@
+/* Empty. Add your own CSS if you like */
+.color-bg{background-color: #f8f8f8;}
+.setting .item-divide{margin-top: 1rem;}
+.setting .item-text{
+	margin-left: 1rem;
+	font-size: 1rem;
+}
+.setting .portrait{
+	width: 3rem;
+	height: 3rem;
+	margin-left: 0.5rem;
+	vertical-align: middle;
+	float: left;
+}
+.setting .nickname{
+	float: left;
+	margin-left: 0.8rem;
+	margin-top: 0.5rem;
+	letter-spacing: 0.02rem;
+}
+.nickname p{
+	line-height: 1rem;
+	height: 1rem;
+	font-size: 0.7rem;
+}
