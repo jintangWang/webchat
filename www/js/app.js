@@ -13,7 +13,7 @@ angular.module('wechat', ['ionic', 'wechat.controllers', 'wechat.routes',
 
 }])
 
-.run(function($ionicPlatform, $http, messageService, dateService) {
+.run(function($ionicPlatform, $http, messageService, dateService,$rootScope,$window) {
 
     var url = "";
     if (ionic.Platform.isAndroid()) {
@@ -35,7 +35,6 @@ angular.module('wechat', ['ionic', 'wechat.controllers', 'wechat.routes',
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
 
-
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
@@ -43,5 +42,9 @@ angular.module('wechat', ['ionic', 'wechat.controllers', 'wechat.routes',
             StatusBar.styleDefault();
         }
     });
+
+    $rootScope.goBack=function (mark) {
+         $window.history.back();
+    }
 
 });

@@ -1,4 +1,11 @@
 /* Empty. Add your own CSS if you like */
+/*公用的一些样式*/
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}
+
+.left-column{float: left;}
+.right-column{float: right;}
+/*-----------------------------------------*/
 .color-bg{background-color: #f8f8f8;}
 .setting .item-divide{margin-top: 1rem;}
 .setting .item-text{
@@ -22,4 +29,44 @@
 	line-height: 1rem;
 	height: 1rem;
 	font-size: 0.7rem;
+}
+/*欢迎页倒计时*/
+.splash-screen{
+    background: url(../img/splash.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.count-down{
+    margin-bottom: 15px;
+    margin-right: 20px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 14px;
+    background: #b2b2b2;
+    padding: 5px 10px;
+    border: 1px solid #b2b2b2;
+    box-shadow: 0 0 10px #b2b2b2;
+    font-family: 微软雅黑,sans-serif;
+}
+.bold-title{
+    font-weight: 900!important;
+}
+
+.setting-style .left-column{
+    font-family:"微软雅黑",sans-serif;
+}
+/*有小图的item项*/
+.small-pic .left-column{
+    height: 2.7rem;
+    line-height: 2.7rem;
+}
+.small-pic img{
+    width: 2.7rem;
+    height: 2.7rem;
 }

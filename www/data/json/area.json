@@ -1,0 +1,27 @@
+{
+	"result":[
+		{"region_name":"中国"},
+		{"region_name":"日本"},
+		{"region_name":"美国"},
+		{"region_name":"英国"},
+		{"region_name":"法国"},
+		{"region_name":"德国"},
+		{"region_name":"意大利"},
+		{"region_name":"西班牙"},
+		{"region_name":"葡萄牙"},
+		{"region_name":"印度"},
+		{"region_name":"老挝"},
+		{"region_name":"缅甸"},
+		{"region_name":"菲律宾"},
+		{"region_name":"加拿大"},
+		{"region_name":"俄罗斯"},
+		{"region_name":"巴西"},
+		{"region_name":"墨西哥"},
+		{"region_name":"埃及"},
+		{"region_name":"南非"},
+		{"region_name":"伊朗"},
+		{"region_name":"巴基斯坦"},
+		{"region_name":"叙利亚"},
+		{"region_name":"阿富汗"}
+	]
+}

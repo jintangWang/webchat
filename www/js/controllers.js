@@ -87,26 +87,6 @@ angular.module('wechat.controllers', [])
     };
 })
 
-.controller('settingCtrl', function($scope, $state) {
-    $scope.onSwipeRight = function() {
-        $state.go("tab.find");
-    };
-    $scope.user={};
-    $scope.user.tel=123;
-    $scope.abc={};
-    // $scope.x='';
-    $scope.check=function () {
-        // $scope.$apply();
-         // console.log("$scope变量:"+$scope.user.tel); 
-         console.log('jq获取的变量:'+$('#tt').val());
-         console.log('$scope变量:'+$scope.abc.x);
-    }
-
-    $scope.vm={};
-    // $scope.color='';
-
-
-})
 
 .controller('messageDetailCtrl', ['$scope', '$stateParams',
     'messageService', '$ionicScrollDelegate', '$timeout',

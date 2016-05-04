@@ -1,0 +1,15 @@
+<ion-header-bar align-title="left" class="bar-dark">
+	<button class="button no-animation button-icon icon ion-android-arrow-back" ng-click="goBack()">
+    </button>
+    <h1 class="title bold-title">选择地区</h1>
+</ion-header-bar>
+<ion-view>
+	<!--  -->
+	<ion-content overflow-scroll="false">
+		<ul class="list">
+			<li class="item" ng-repeat="area in areas | orderBy:areaOrder">
+				{{area.region_name}}
+			</li>
+		</ul>
+	</ion-content>
+</ion-view>

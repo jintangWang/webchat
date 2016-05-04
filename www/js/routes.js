@@ -3,6 +3,14 @@ angular.module('wechat.routes', [])
 .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
+        //倒计时启动页..............................
+        .state('splash', {
+            url: '/splash',
+            cache: false,
+            templateUrl: 'templates/splash_screen/splash.html',
+            controller: 'splashCtrl'
+        }) 
+        //首页选项卡...................................
         .state("tab", {
             url: "/tab",
             abstract: true,
@@ -48,7 +56,22 @@ angular.module('wechat.routes', [])
                     controller: "settingCtrl"
                 }
             }
-        });
-    $
-    $urlRouterProvider.otherwise("/tab/message");
+        })
+        //首页选项卡结束.........................
+
+        .state('personSet',{
+            cache:false,
+            url:'/personSet',
+            templateUrl:'templates/setting/personSet.html',
+            controller: 'personSetCtrl'
+        })
+        .state('area',{
+            cache:false,
+            url:'/area',
+            templateUrl:'templates/setting/area.html',
+            controller: 'areaCtrl'
+        })
+
+
+    $urlRouterProvider.otherwise("/splash");
 });
