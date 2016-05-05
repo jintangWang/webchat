@@ -70,3 +70,18 @@
     width: 2.7rem;
     height: 2.7rem;
 }
+
+.indexLetter{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 9;
+    overflow: hidden;
+    transform:translate(-50%,-50%);
+}
+.indexLetter li{
+    text-align: center;
+}
+.indexLetter li:hover{
+    color: green;
+}

@@ -12,4 +12,9 @@
 			</li>
 		</ul>
 	</ion-content>
+	<!-- 固定层要放在ion-content外面,不然即使用fixed也会失效 -->
+	<ul class="indexLetter">
+		<li ng-repeat="letter in letters">{{letter[0]}}</li>
+	</ul>
+
 </ion-view>
