@@ -4,17 +4,17 @@
     <h1 class="title bold-title">选择地区</h1>
 </ion-header-bar>
 <ion-view>
-	<!--  -->
-	<ion-content overflow-scroll="false">
-		<ul class="list">
-			<li class="item" ng-repeat="area in areas | orderBy:areaOrder">
+	<!-- false表示不显示滑块 -->
+	<ion-content overflow-scroll="false" id="area" on-scroll="scroll()" delegate-handle="area">
+		<ul class="list" >
+			<li class="item" ng-repeat="area in areas">
 				{{area.region_name}}
 			</li>
 		</ul>
 	</ion-content>
 	<!-- 固定层要放在ion-content外面,不然即使用fixed也会失效 -->
-	<ul class="indexLetter">
-		<li ng-repeat="letter in letters">{{letter[0]}}</li>
+	<ul class="indexLetter" ng-click="selectItem($event)">
+		<li ng-repeat="letter in letters" ng-class="{scrollItem:$index==index}">{{letter[0]}}</li>
 	</ul>
 
 </ion-view>

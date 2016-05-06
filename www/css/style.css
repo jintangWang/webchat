@@ -82,6 +82,6 @@
 .indexLetter li{
     text-align: center;
 }
-.indexLetter li:hover{
+.indexLetter li:hover,.scrollItem{
     color: green;
 }
