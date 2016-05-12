@@ -84,4 +84,16 @@
 }
 .indexLetter li:hover,.scrollItem{
     color: green;
+    box-shadow: 0 0 3px green inset;
 }
+
+.sublist{
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f8f8f8;
+    width: 40%;
+}
+.clear_back{background: none;}
