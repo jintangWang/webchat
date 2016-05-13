@@ -5,20 +5,23 @@
 </ion-header-bar>
 <ion-view>
 	<!-- false表示不显示滑块 -->
-	<ion-content overflow-scroll="false" id="area" on-scroll="scroll()" delegate-handle="area">
+	<ion-content overflow-scroll="false" id="area" on-scroll="scroll()" delegate-handle="area" ng-class="{'high-zIndex':provinShow}" ng-click="clickView($event)">
+
+		<div class="backlevel" ng-show="bgShow" ng-init="backShow=false"></div>
+
 		<ul class="list" >
-			<li class="item" ng-repeat="area in areas">
+			<li class="item" ng-repeat="area in areas" ng-click="selCountry(area,$event)">
 				{{area.region_name}}
 			</li>
 		</ul>
 		
-		<div class="sublist">
+		<div class="sublist"  ng-if="provinShow" ng-init="provinShow=false">
 		<ion-content>
 		<ul class="list">
-			<li class="item" ng-repeat="province in provinceList">
-				{{}}
+			<li class="item" ng-repeat="province in provinceList" ng-click="selProvin(province)">
+				{{province.privince_name}}
 			</li>
-			<li class="item clear_back">
+			<!-- <li class="item clear_back">
 				123
 			</li>
 			<li class="item clear_back">
@@ -85,7 +88,7 @@
 			</li>
 			<li class="item clear_back">
 				123123125123
-			</li>
+			</li> -->
 		</ul>
 		</ion-content>
 		</div>

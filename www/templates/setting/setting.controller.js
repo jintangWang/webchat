@@ -44,7 +44,6 @@ angular.module('wechat.controllers')
         } 
     })
 
-
 //     angular.element($('#area')).on('scroll',function(){
 //         $("#area ul").scroll();
 //         console.log(1)
@@ -59,6 +58,13 @@ angular.module('wechat.controllers')
         // console.log('滚动的距离='+top);
     }    
 
+    $scope.letters=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
+    //list排序过滤,此放在controller中,因为放在filter.js里不起作用,原因不知
+    $scope.areaOrder=function (input) {
+          return LetterFactory.getLetter(input.region_name);
+    }
+
     //点击字母索引事件
     $scope.selectItem=function (event) {
         //获取offsetHeight的操作放在事件中,其他地方取不到的奇怪bug
@@ -67,13 +73,27 @@ angular.module('wechat.controllers')
         var selIdx= $scope.areaLetters.indexOf(target);
         $ionicScrollDelegate.$getByHandle('area').scrollTo(0,selIdx*itemHeight);
     }
-
-    $scope.letters=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-
-    //list排序过滤,此放在controller中,因为放在filter.js里不起作用,原因不知
-    $scope.areaOrder=function (input) {
-          return LetterFactory.getLetter(input.region_name);
+    //选择国家事件
+    $scope.selCountry=function (item,e) {
+        if(item.provinlist && item.provinlist.length!=0){
+            $scope.provinShow=true;
+            $scope.bgShow=true;
+            $scope.provinceList=item.provinlist;
+        }
+        e.stopPropagation();
     }
-    
+    //点击省份列表或背景层的事件:事件代理
+    $scope.clickView=function (e) {
+        // console.log(e)
+        // if(e.target.className!='backlevel'){//只能获取渲染出的数据
+        
+        // }
+        $scope.provinShow=false;
+        $scope.bgShow=false;
+    }
+    //点击省份列表的事件
+    $scope.selProvin=function (item) {
+          
+    }
     
 })
