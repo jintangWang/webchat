@@ -2,7 +2,13 @@
 	"result":[
 		{"region_name":"中国","provinlist":[
 				{"privince_name":"北京"},
-				{"privince_name":"上海"},
+				{"privince_name":"上海","cityList":[
+					{"city_name":"奉贤区"},
+					{"city_name":"徐汇区"},
+					{"city_name":"闸北区"},
+					{"city_name":"浦东新区"},
+					{"city_name":"长宁区"}
+				]},
 				{"privince_name":"广东"},
 				{"privince_name":"陕西"},
 				{"privince_name":"四川"},
@@ -10,7 +16,15 @@
 			]
 		},
 		{"region_name":"日本"},
-		{"region_name":"美国"},
+		{"region_name":"美国","provinlist":[
+				{"privince_name":"加利福尼亚州"},
+				{"privince_name":"科罗拉多州"},
+				{"privince_name":"密苏里州"},
+				{"privince_name":"内华达州"},
+				{"privince_name":"纽约州"},
+				{"privince_name":"明尼苏达州"}
+			]
+		},
 		{"region_name":"英国"},
 		{"region_name":"法国"},
 		{"region_name":"德国"},

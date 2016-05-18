@@ -3242,9 +3242,10 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: baseline;
+  /* vertical-align: baseline; */
   font: inherit;
-  font-size: 100%; }
+  font-size: 100%;
+  }
 
 ol, ul {
   list-style: none; }
@@ -6675,7 +6676,8 @@ button.item.item-button-right {
   margin-bottom: 20px; }
 
 .list:last-child {
-  margin-bottom: 0px; }
+  /* margin-bottom: 0px; */
+  }
   .list:last-child.card {
     margin-bottom: 40px; }
 

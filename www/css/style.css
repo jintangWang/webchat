@@ -86,7 +86,14 @@
     color: green;
     box-shadow: 0 0 3px green inset;
 }
+.hand_cursor{cursor: pointer;}
 
+
+.grayback{background: #f8f8f8;}
+.location_span{
+    margin-left: 10px;
+    margin-top: 1rem;
+}
 .sublist{
     position: absolute;
     z-index: 10;
@@ -94,16 +101,26 @@
     top: 0;
     bottom: 0;
     background: #f8f8f8;
-    width: 40%;
+    width: 65%;
+}
+.thirdlist{
+    position: absolute;
+    z-index: 12;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f8f8f8;
+    width: 30%;
 }
 .clear_back{background: none;}
 .backlevel{
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.4);
     position: absolute;
     /* left: 0; */
     /* top: 0; */
     z-index: 10;
 }
+.highback{z-index: 11;}
 .high-zIndex{z-index: 10;}

@@ -1,101 +1,53 @@
-<ion-header-bar align-title="left" class="bar-dark">
+<ion-header-bar align-title="left" class="bar-dark" id="header_ion">
 	<button class="button no-animation button-icon icon ion-android-arrow-back" ng-click="goBack()">
     </button>
     <h1 class="title bold-title">选择地区</h1>
 </ion-header-bar>
 <ion-view>
 	<!-- false表示不显示滑块 -->
-	<ion-content overflow-scroll="false" id="area" on-scroll="scroll()" delegate-handle="area" ng-class="{'high-zIndex':provinShow}" ng-click="clickView($event)">
+	<ion-content overflow-scroll="false" id="area" on-scroll="scroll()" delegate-handle="area" ng-class="{'high-zIndex':provinShow}" ng-click="clickView($event)" class="grayback">
+
+		<p class="location_span">当前位置:</p>
+		<ul class="list" >
+			<li class="item">{{selected}}</li>
+		</ul>
+
 
 		<div class="backlevel" ng-show="bgShow" ng-init="backShow=false"></div>
+		
 
-		<ul class="list" >
+		<ul class="list" id="area_ul">
 			<li class="item" ng-repeat="area in areas" ng-click="selCountry(area,$event)">
 				{{area.region_name}}
 			</li>
 		</ul>
 		
-		<div class="sublist"  ng-if="provinShow" ng-init="provinShow=false">
-		<ion-content>
-		<ul class="list">
-			<li class="item" ng-repeat="province in provinceList" ng-click="selProvin(province)">
-				{{province.privince_name}}
-			</li>
-			<!-- <li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123
-			</li><li class="item clear_back">
-				123
-			</li>
-			<li class="item clear_back">
-				123123125123
-			</li> -->
-		</ul>
-		</ion-content>
-		</div>
 	</ion-content>
 	<!-- 固定层要放在ion-content外面,不然即使用fixed也会失效 -->
 	<ul class="indexLetter" ng-click="selectItem($event)">
 		<li ng-repeat="letter in letters" ng-class="{scrollItem:$index==index}">{{letter[0]}}</li>
 	</ul>
+
+	<div class="sublist"  ng-if="provinShow" ng-init="provinShow=false">
+	<ion-content>
+	<ul class="list">
+		<li class="item" ng-repeat="province in provinceList" ng-click="selProvin(province)">
+			{{province.privince_name}}
+		</li>
+	</ul>
+	</ion-content>
+	</div>
+	
+	<div class="backlevel highback" ng-show="bgShow2" ng-init="backShow2=false" ng-click="hideback2()"></div>
+
+	<div class="thirdlist"  ng-if="cityShow" ng-init="cityShow=false">
+	<ion-content>
+	<ul class="list">
+		<li class="item" ng-repeat="city in cityList" ng-click="selCity(city)">
+			{{city.city_name}}
+		</li>
+	</ul>
+	</ion-content>
+	</div>
 
 </ion-view>
