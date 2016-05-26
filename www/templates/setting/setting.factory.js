@@ -74,3 +74,20 @@ angular.module('wechat.services')
 		}
 	}
 })
+/*用百度地图定位*/
+.factory('baiduLocation',function($q, $http, baiduKEY){
+	return {
+		getCityName:function (lat,lon) {
+			var defer=$q.defer();
+			$http.get("http://api.map.baidu.com/geocoder/v2/?ak="+baiduKEY+"&location=+"+lat+","+lon+"+&output=json&pois=0")
+				.then(function (callback) {
+				if(callback.status==200){
+					defer.resolve(callback.data.result);
+				}else{
+					defer.reject("百度定位失败");
+				}
+			});	 
+			return defer.promise; 
+		}
+	};
+});

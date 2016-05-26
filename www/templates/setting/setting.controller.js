@@ -23,7 +23,7 @@ angular.module('wechat.controllers')
 })
 .controller('personSetCtrl', function($scope,$state,$window) {
 	
-    $window.sessionstorage['hello']=1;
+    // $window.sessionstorage['hello']=1;
     $scope.region=$window.localStorage['region'];
     //事件:
     $scope.goArea=function () {
@@ -33,7 +33,7 @@ angular.module('wechat.controllers')
 .controller('areaCtrl', function($scope,AreaListFactory,LetterFactory,$window,
     $filter,$ionicScrollDelegate){
 
-    $scope.selected="中国";
+    $scope.selected=$window.localStorage['locCity'];
 
     AreaListFactory.getAreaList().then(function (callback) {
         if(callback.status==200){

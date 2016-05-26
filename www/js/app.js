@@ -13,7 +13,8 @@ angular.module('wechat', ['ionic', 'wechat.controllers', 'wechat.routes',
 
 }])
 
-.run(function($ionicPlatform, $http, messageService, dateService,$rootScope,$window) {
+.run(function($ionicPlatform, $http, messageService, dateService,$rootScope,
+    $window,baiduLocation) {
 
     var url = "";
     if (ionic.Platform.isAndroid()) {
@@ -41,6 +42,23 @@ angular.module('wechat', ['ionic', 'wechat.controllers', 'wechat.routes',
         if (window.StatusBar) {
             StatusBar.styleDefault();
         }
+
+        //定位
+        navigator.geolocation.getCurrentPosition(success, error, { enableHighAccuracy: true });
+        function success(position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            console.log('定位到{latitude:'+lat+',longitude:'+lon+'}');
+            baiduLocation.getCityName(lat,lon).then(function (result) {
+                  $window.localStorage['locCity']=result.addressComponent.city;
+            }, function (err) {
+                  console.error(err);
+            })
+        };
+
+        function error() {
+            console.log("不能定位当前位置");
+        };
     });
 
     $rootScope.goBack=function (mark) {
