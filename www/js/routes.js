@@ -72,6 +72,37 @@ angular.module('wechat.routes', [])
             controller: 'areaCtrl'
         })
 
+        //发现选项卡下-----------------------------
+        .state('active',{
+            // cache:false,
+            url:'/active',
+            templateUrl:'templates/find/active.html',
+            controller:'activeCtrl'
+        })
 
+        .state('subTab',{
+            url:'/subTab',
+            // abstract:true,
+            templateUrl:'templates/find/subTab.html',
+            // controller:'subTabCtrl'
+        })
+        .state('subTab.req',{
+            url:'/req',
+            views:{
+                'req':{
+                    templateUrl:'templates/find/req.html',
+                    controller:'reqCtrl'
+                }
+            }
+        })
+        .state('subTab.res',{
+            url:'/res',
+            views:{
+                'res':{
+                    templateUrl:'templates/find/res.html',
+                    controller:'resCtrl'
+                }
+            }
+        })
     $urlRouterProvider.otherwise("/splash");
 });

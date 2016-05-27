@@ -124,3 +124,9 @@
 }
 .highback{z-index: 11;}
 .high-zIndex{z-index: 10;}
+
+.middle_h2{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+}

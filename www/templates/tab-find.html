@@ -9,6 +9,17 @@
 	</ion-header-bar>
 <ion-view on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()">
     <ion-content>
-        <h1 >发现页面</h1>
+		<ul class="list">
+			<li class="item  item-avatar" ng-click="goActive()">
+				<img src="../img/me.png" alt="活动图标">
+				<h2 class="middle_h2">热门活动</h2>
+			</li>
+		</ul>
+		<ul class="list">
+			<li class="item  item-avatar" ng-click="goTestTab()">
+				<img src="../img/me.png" alt="活动图标">
+				<h2 class="middle_h2">子tabs</h2>
+			</li>
+		</ul>
     </ion-content>
 </ion-view>

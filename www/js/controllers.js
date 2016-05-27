@@ -7,6 +7,13 @@ angular.module('wechat.controllers', [])
     $scope.onSwipeRight = function() {
         $state.go("tab.friends");
     };
+
+    $scope.goActive=function () {
+         $state.go('active'); 
+    }
+    $scope.goTestTab=function () {
+         $state.go('subTab'); 
+    }
 })
 
 .controller('messageCtrl', function($scope, $state, $ionicPopup, localStorageService, messageService) {

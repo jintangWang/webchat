@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('wechat', ['ionic', 'wechat.controllers', 'wechat.routes',
+angular.module('wechat', ['ionic','ngCordova','wechat.controllers', 'wechat.routes',
     'wechat.services', 'wechat.directives', 'monospaced.elastic'
 ])
 
@@ -14,7 +14,7 @@ angular.module('wechat', ['ionic', 'wechat.controllers', 'wechat.routes',
 }])
 
 .run(function($ionicPlatform, $http, messageService, dateService,$rootScope,
-    $window,baiduLocation) {
+    $window,baiduLocation,$ionicHistory,$cordovaToast,$location) {
 
     var url = "";
     if (ionic.Platform.isAndroid()) {
@@ -32,6 +32,7 @@ angular.module('wechat', ['ionic', 'wechat.controllers', 'wechat.routes',
             console.log(response.data.results);
         });
     // }
+
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -61,8 +62,35 @@ angular.module('wechat', ['ionic', 'wechat.controllers', 'wechat.routes',
         };
     });
 
+    /*双击退出*/
+    var first_time=new Date().getTime();
+    $ionicPlatform.registerBackButtonAction(function (e) {
+        // if ($location.path().indexOf('tab')!=-1) {
+        //     var second_time=new Date().getTime();
+        //     if(second_time-first_time>1000){
+        //         $cordovaToast.showShortBottom('再按一次退出系统!');
+        //         first_time=new Date().getTime();
+        //         return;
+        //     }else{
+        //         ionic.Platform.exitApp();
+        //     }
+        // }else 
+        if ($ionicHistory.backView()) {
+            console.log("使用$ionicHistory.goBack()返回历史");
+            $ionicHistory.goBack();
+        }else {
+            // console.log("$window.history.back()");
+            // $window.history.back();
+        } 
+        e.preventDefault();
+        return false;
+    }, 101);//101是优先级,$ionicLoading优先级是500
+
+    /*全局回退方法*/
     $rootScope.goBack=function (mark) {
-         $window.history.back();
+         // $window.history.back();
+         // debugger
+         $ionicHistory.goBack();
     }
 
 });
