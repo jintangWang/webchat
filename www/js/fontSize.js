@@ -3,7 +3,7 @@ $(function(){
     $(window).resize(function()
     {
       initpage();
-    })
+    }) 
 
     function initpage()
     {
